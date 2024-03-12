@@ -10,6 +10,7 @@ const car = getCar(cars);
 
 if (!car) {
   throw createError({
+    statusCode: 404,
     message: `Car ${route.params.name} with ID ${route.params.id} is Not Found!!! >.<`,
   });
 }

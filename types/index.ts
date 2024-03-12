@@ -1,4 +1,4 @@
-export { Car };
+export { Car, Modal };
 
 declare global {
   interface Car {
@@ -10,5 +10,10 @@ declare global {
     miles: number;
     features: Array<string>;
     description: string;
+  }
+  interface Modal {
+    location: boolean;
+    make: boolean;
+    price: boolean;
   }
 }
