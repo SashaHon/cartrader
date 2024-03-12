@@ -1,5 +1,3 @@
-export { Car, Modal };
-
 declare global {
   interface Car {
     id: number;
@@ -17,3 +15,5 @@ declare global {
     price: boolean;
   }
 }
+
+export type { Car, Modal };

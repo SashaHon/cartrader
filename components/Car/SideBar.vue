@@ -9,13 +9,19 @@ const route = useRoute();
 const city = ref<string>("");
 
 const toggleModal = (key: string) => {
+  console.log("click!");
   modal.value[key as keyof Modal] = !modal.value[key as keyof Modal];
 };
 
-console.log("route params 1", route.params);
-
 const onChangeLocation = (): void => {
   if (!city.value) return;
+
+  if (!isNaN(parseInt(city.value))) {
+    throw createError({
+      statusCode: 400,
+      message: "Invalid city format",
+    });
+  }
   toggleModal("location");
   navigateTo(`/city/${city.value}/car/${route.params.make}`);
   city.value = "";
