@@ -1,5 +1,5 @@
-export const useUtilities = () => {
-  function toUpperCaseFirstLetter(str: string) {
+export const useUtilities = (): { toUpperCaseFirstLetter: Function } => {
+  function toUpperCaseFirstLetter(str: string): string {
     return str.charAt(0).toUpperCase() + str.slice(1);
   }
 

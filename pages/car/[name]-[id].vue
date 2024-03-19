@@ -2,8 +2,8 @@
 const route = useRoute();
 const { cars } = useCars();
 
-const getCar = (carList: Array<Car>): Car | undefined => {
-  return carList.find((c) => c.id === +route.params.id);
+const getCar = (carList: Car[]): Car | undefined => {
+  return carList.find((oneCar) => oneCar.id === +route.params.id);
 };
 
 const car = getCar(cars);
