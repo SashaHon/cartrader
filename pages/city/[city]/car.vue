@@ -9,7 +9,7 @@ useHead({
 });
 
 definePageMeta({
-  layout: "custom",
+  layout: 'custom',
 });
 </script>
 

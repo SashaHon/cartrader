@@ -1,6 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
-  layout: "custom",
+  layout: 'custom',
 });
 
 interface Info {
@@ -18,17 +18,17 @@ interface Info {
 
 const { makes } = useCars();
 
-const info = useState<Info>("adInfo", () => {
+const info = useState<Info>('adInfo', () => {
   return {
-    make: "",
-    model: "",
-    year: "",
-    miles: "",
-    price: "",
-    city: "",
-    seats: "",
-    features: "",
-    description: "",
+    make: '',
+    model: '',
+    year: '',
+    miles: '',
+    price: '',
+    city: '',
+    seats: '',
+    features: '',
+    description: '',
     image: null,
   };
 });
@@ -40,39 +40,39 @@ const onChangeInput = (data: string, name: string): void => {
 const inputs = [
   {
     id: 1,
-    title: "Model *",
-    name: "model",
-    placeholder: "Civic",
+    title: 'Model *',
+    name: 'model',
+    placeholder: 'Civic',
   },
   {
     id: 2,
-    title: "Year *",
-    name: "year",
-    placeholder: "2019",
+    title: 'Year *',
+    name: 'year',
+    placeholder: '2019',
   },
   {
     id: 3,
-    title: "Miles *",
-    name: "miles",
-    placeholder: "10000",
+    title: 'Miles *',
+    name: 'miles',
+    placeholder: '10000',
   },
   {
     id: 4,
-    title: "City *",
-    name: "city",
-    placeholder: "Austin",
+    title: 'City *',
+    name: 'city',
+    placeholder: 'Austin',
   },
   {
     id: 5,
-    title: "Number of Seats *",
-    name: "seats",
-    placeholder: "5",
+    title: 'Number of Seats *',
+    name: 'seats',
+    placeholder: '5',
   },
   {
     id: 6,
-    title: "Features *",
-    name: "features",
-    placeholder: "Leather Interior, No Accidents",
+    title: 'Features *',
+    name: 'features',
+    placeholder: 'Leather Interior, No Accidents',
   },
 ];
 </script>

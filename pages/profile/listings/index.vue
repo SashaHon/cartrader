@@ -1,6 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
-  layout: "custom",
+  layout: 'custom',
 });
 
 const { listings } = useCars();

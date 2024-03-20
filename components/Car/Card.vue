@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import heartFilled from "@/assets/heartFilled.png";
-import heartOutline from "@/assets/heartOutline.png";
+import heartFilled from '@/assets/heartFilled.png';
+import heartOutline from '@/assets/heartOutline.png';
 
 const props = defineProps<{ car: Car; favored: Boolean }>();
 
 const { url, name, miles, description, features, id, price, seats } = props.car;
 
-const emit = defineEmits(["favor"]);
+const emit = defineEmits(['favor']);
 </script>
 
 <template>

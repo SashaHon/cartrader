@@ -16,7 +16,7 @@ if (!car) {
 }
 
 definePageMeta({
-  layout: "custom",
+  layout: 'custom',
 });
 </script>
 
