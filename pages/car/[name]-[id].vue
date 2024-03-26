@@ -1,19 +1,11 @@
-<script setup lang="ts">
+<script async setup lang="ts">
 const route = useRoute();
-const { cars } = useCars();
+const { data: car } = await useFetchCar(route.params.id as string);
 
-const getCar = (carList: Car[]): Car | undefined => {
-  return carList.find((oneCar) => oneCar.id === +route.params.id);
-};
-
-const car = getCar(cars);
-
-if (!car) {
-  throw createError({
-    statusCode: 404,
-    message: `Car ${route.params.name} with ID ${route.params.id} is Not Found!!! >.<`,
-  });
-}
+const { toUpperCaseFirstLetter } = useUtilities();
+useHead({
+  title: toUpperCaseFirstLetter(route.params.name),
+});
 
 definePageMeta({
   layout: 'custom',

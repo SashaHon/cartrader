@@ -7,11 +7,8 @@ export default async (
   }
 ): Promise<{
   data: Ref<Car[] | null>;
-  refresh: (opts?: AsyncDataExecuteOptions) => Promise<void>;
 }> => {
-  // console.log('hit!!');
-
-  const { data, error, refresh } = await useFetch(`/api/cars/${city}`, {
+  const { data, error } = await useFetch(`/api/cars/${city}`, {
     params: {
       ...filters,
     },
@@ -22,9 +19,7 @@ export default async (
       ...error.value,
       statusMessage: 'unable to fetch cars',
     });
-
-    // return { data, refresh };
   }
 
-  return { data, refresh };
+  return { data };
 };

@@ -10,16 +10,11 @@ const checkCarsPromise = await useFetchCars(city, {
   make: route.params.make as string,
 });
 
-const { data: cars, refresh } = checkCarsPromise;
-
-// console.log('1____data', data, '2____refresh', refresh);
+const { data: cars } = checkCarsPromise;
 
 watch(
   () => route.query,
   () => {
-    // console.log('route.query', route.query);
-    // console.log('refresh has been triggered!!');
-    // refresh();
     window.location.reload();
   }
 );
