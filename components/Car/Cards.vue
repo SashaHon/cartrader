@@ -1,9 +1,14 @@
 <script setup lang="ts">
-const { cars } = useCars();
+// const { cars } = useCars();
+
+const { cars } = defineProps<{ cars: Car[] }>();
+
+console.log('cars:', cars);
+// cars.forEach((car) => console.log(car.id));
 
 const favoriteMap: Record<number, boolean> = {};
 
-const favorite = useLocalStorage("favorite", favoriteMap);
+const favorite = useLocalStorage('favorite', favoriteMap);
 
 const handleFavor = (id: number): void => {
   if (id in favorite.value) {

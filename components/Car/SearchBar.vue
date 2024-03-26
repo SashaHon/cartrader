@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const city = ref("");
+const city = ref('');
 const cityError = ref(false);
 
 const handleSearch = (): void => {

@@ -18,7 +18,7 @@ const priceRangeText = computed((): string => {
   const minPrice = route.query.minPrice;
   const maxPrice = route.query.maxPrice;
 
-  if (!minPrice && !maxPrice) return "Any";
+  if (!minPrice && !maxPrice) return 'Any';
   else if (!minPrice && maxPrice) {
     return `< $${maxPrice}`;
   } else if (minPrice && !maxPrice) {
@@ -27,8 +27,8 @@ const priceRangeText = computed((): string => {
     return `$${minPrice}-$${maxPrice}`;
   }
 });
-const city = ref<string>("");
-const priceRange = ref<priceRangeInt>({ min: "", max: "" });
+const city = ref<string>('');
+const priceRange = ref<priceRangeInt>({ min: '', max: '' });
 
 const toggleModal = (key: string): void => {
   modal.value[key as keyof Modal] = !modal.value[key as keyof Modal];
@@ -40,16 +40,16 @@ const onChangeLocation = (): void => {
   if (!isNaN(parseInt(city.value))) {
     throw createError({
       statusCode: 400,
-      message: "Invalid city format",
+      message: 'Invalid city format',
     });
   }
-  toggleModal("location");
+  toggleModal('location');
   navigateTo(`/city/${city.value}/car/${route.params.make}`);
-  city.value = "";
+  city.value = '';
 };
 
 const onChangeMake = (make: string): void => {
-  toggleModal("make");
+  toggleModal('make');
   navigateTo(`/city/${route.params.city}/car/${make}`);
 };
 
@@ -59,18 +59,19 @@ const onChangePriceRange = (): void => {
 
   if (minPrice && maxPrice) {
     if (minPrice > maxPrice || minPrice === maxPrice) {
-      priceRange.value.min = "";
-      priceRange.value.max = "";
+      priceRange.value.min = '';
+      priceRange.value.max = '';
       return;
     }
   }
+
   router.push({
     query: {
       minPrice: minPrice,
       maxPrice: maxPrice,
     },
   });
-  toggleModal("price");
+  toggleModal('price');
 };
 </script>
 
@@ -98,7 +99,7 @@ const onChangePriceRange = (): void => {
     <div class="p-5 flex justify-between relative cursor-pointer border-b">
       <h3>Make</h3>
       <h3 class="text-blue-400 capitalize" @click="toggleModal('make')">
-        {{ route.params.make || "Any" }}
+        {{ route.params.make || 'Any' }}
       </h3>
       <div
         v-if="modal.make"
