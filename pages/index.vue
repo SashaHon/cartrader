@@ -1,6 +1,6 @@
 <script setup lang="ts">
 useHead({
-  title: "Cartrader",
+  title: 'Cartrader',
 });
 </script>
 

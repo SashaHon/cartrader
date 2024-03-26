@@ -1,9 +1,9 @@
 <script setup lang="ts">
 const error = useError();
 
-const handleError = () => {
+const handleError = (): void => {
   clearError({
-    redirect: "/",
+    redirect: '/',
   });
 };
 </script>
